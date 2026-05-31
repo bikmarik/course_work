@@ -103,7 +103,7 @@ The neural architecture includes:
 - dense GELU layers;
 - a final dense forecast output.
 
-An LSTM architecture was selected instead of a Transformer because the current task uses short annual accounting sequences. The recurrent model provides a direct sequential inductive bias, while attention-based models are more attractive for future versions with longer quarterly histories or textual filing inputs.
+An LSTM architecture was selected instead of a Transformer because the current task uses short annual accounting sequences. The recurrent model provides a direct sequential inductive bias for ordered annual financial statements.
 
 ## Results Summary
 
@@ -214,10 +214,3 @@ python predict.py
 - External validation shows sensitivity to outliers and companies far from the S&P 500-style distribution.
 - The current system uses structured numerical data only and does not inspect textual filing sections.
 - The model is competitive but not dominant on every validation metric.
-
-## Future Work
-
-Future development will extend DEEPFIN with an LLM-based Management Discussion and Analysis inspection module. This would add qualitative filing signals such as liquidity risk, supply-chain disruption, uncertainty language, capital allocation explanations, and margin-pressure descriptions.
-
-The long-term direction is a multimodal forecasting system that combines audited numerical financial statements with textual risk and strategy signals from annual reports.
-
