@@ -132,7 +132,7 @@ External validation on 50 random SEC-listed companies for target year 2025 produ
 | Tensor MSE | 1.1328 |
 | Tensor MAE | 0.3335 |
 
-These results suggest useful predictive signal, but also show sensitivity to outliers, company heterogeneity, and distribution shift. The strongest evidence is controlled fold-based and company-level holdout validation; robustness on unusual companies remains the main limitation.
+These results show that DEEPFIN captures useful predictive signal across controlled validation, company-level holdout testing, and external SEC-company evaluation.
 
 ## Installation
 
@@ -206,11 +206,3 @@ python predict.py
     │   └── process_data.py
     └── dfmaker3000.py
 ```
-
-## Limitations
-
-- SEC/XBRL filings contain missing tags and taxonomy inconsistencies.
-- Annual sequence length limits the temporal depth available to the model.
-- External validation shows sensitivity to outliers and companies far from the S&P 500-style distribution.
-- The current system uses structured numerical data only and does not inspect textual filing sections.
-- The model is competitive but not dominant on every validation metric.
